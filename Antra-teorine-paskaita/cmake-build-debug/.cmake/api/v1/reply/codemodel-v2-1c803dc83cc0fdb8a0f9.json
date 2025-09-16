@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.29"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Antra_teorine_paskaita",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Antra_teorine_paskaita::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Antra_teorine_paskaita-Debug-e9a908f6712505764fc1.json",
+					"name" : "Antra_teorine_paskaita",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/j.zailskas/Desktop/Strukturinis2025/Antra-teorine-paskaita/cmake-build-debug",
+		"source" : "C:/Users/j.zailskas/Desktop/Strukturinis2025/Antra-teorine-paskaita"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
