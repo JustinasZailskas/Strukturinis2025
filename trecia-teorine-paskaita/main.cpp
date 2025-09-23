@@ -12,32 +12,64 @@ int main() {
     //     cout << "Jus turite visai kita vaisiu"<<endl;
     // }
 
-    int diena = 7;
+    // int diena = 7;
+    //
+    // switch (diena) {
+    //     case 1:
+    //         cout << "Pirmadienis"<< endl;
+    //         break;
+    //     case 2:
+    //         cout <<"Antradienis"<< endl;
+    //         break;
+    //     case 3:
+    //         cout << "Treciadienis"<< endl;
+    //         break;
+    //     case 4:
+    //         cout <<"ketvirtadienis"<< endl;
+    //         break;
+    //     case 5:
+    //         cout << "Penktadienis"<< endl;
+    //         break;
+    //     case 6:
+    //         cout <<"Sestadienis"<< endl;
+    //         break;
+    //     case 7:
+    //         cout <<"Sekmadienis"<<endl;
+    //         break;
+    //     default:
+    //         cout <<"Tokios savaites dienos nera"<< endl;
+    // }
+    int diena;
+    while(true) {
 
-    switch (diena) {
-        case 1:
-            cout << "Pirmadienis"<< endl;
+        cout <<"Iveskite diena (1-7)"<<endl;
+        cin>>diena;
+        switch (diena) {
+            case 1:
+                cout << "Pirmadienis"<< endl;
             break;
-        case 2:
-            cout <<"Antradienis"<< endl;
+            case 2:
+                cout <<"Antradienis"<< endl;
             break;
-        case 3:
-            cout << "Treciadienis"<< endl;
+            case 3:
+                cout << "Treciadienis"<< endl;
             break;
-        case 4:
-            cout <<"ketvirtadienis"<< endl;
+            case 4:
+                cout <<"ketvirtadienis"<< endl;
             break;
-        case 5:
-            cout << "Penktadienis"<< endl;
+            case 5:
+                cout << "Penktadienis"<< endl;
             break;
-        case 6:
-            cout <<"Sestadienis"<< endl;
+            case 6:
+                cout <<"Sestadienis"<< endl;
             break;
-        case 7:
-            cout <<"Sekmadienis"<<endl;
+            case 7:
+                cout <<"Sekmadienis"<<endl;
             break;
-        default:
-            cout <<"Tokios savaites dienos nera"<< endl;
+            default:
+                cout <<"Tokios savaites dienos nera"<< endl;
+        }
+        
     }
     return 0;
 }
