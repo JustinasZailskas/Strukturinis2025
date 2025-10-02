@@ -1,16 +1,87 @@
 #include <iostream>
+using namespace std;
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+    // string vaisius = "vysnia";
+    //
+    // if (vaisius == "obuolys") {
+    //     cout << "Jus turite obuolys"<<endl;
+    // } else if (vaisius == "vysnia") {
+    //     cout <<"Jus turie vysnia" <<endl;
+    // } else {
+    //     cout << "Jus turite visai kita vaisiu"<<endl;
+    // }
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
+    // int diena = 7;
+    //
+    // switch (diena) {
+    //     case 1:
+    //         cout << "Pirmadienis"<< endl;
+    //         break;
+    //     case 2:
+    //         cout <<"Antradienis"<< endl;
+    //         break;
+    //     case 3:
+    //         cout << "Treciadienis"<< endl;
+    //         break;
+    //     case 4:
+    //         cout <<"ketvirtadienis"<< endl;
+    //         break;
+    //     case 5:
+    //         cout << "Penktadienis"<< endl;
+    //         break;
+    //     case 6:
+    //         cout <<"Sestadienis"<< endl;
+    //         break;
+    //     case 7:
+    //         cout <<"Sekmadienis"<<endl;
+    //         break;
+    //     default:
+    //         cout <<"Tokios savaites dienos nera"<< endl;
+    // }
+    // int diena;
+    // while(true) {
+    //
+    //     cout <<"Iveskite diena (1-7)"<<endl;
+    //     cin>>diena;
+    //     switch (diena) {
+    //         case 1:
+    //             cout << "Pirmadienis"<< endl;
+    //         break;
+    //         case 2:
+    //             cout <<"Antradienis"<< endl;
+    //         break;
+    //         case 3:
+    //             cout << "Treciadienis"<< endl;
+    //         break;
+    //         case 4:
+    //             cout <<"ketvirtadienis"<< endl;
+    //         break;
+    //         case 5:
+    //             cout << "Penktadienis"<< endl;
+    //         break;
+    //         case 6:
+    //             cout <<"Sestadienis"<< endl;
+    //         break;
+    //         case 7:
+    //             cout <<"Sekmadienis"<<endl;
+    //         break;
+    //         default:
+    //             cout <<"Tokios savaites dienos nera"<< endl;
+    //     }
+    //
+    // }
+
+    int number;
+    cout <<"Iveskite sveikaji skaiciu Number"<<endl;
+    cin >> number;
+    int sum = 0;
+
+    for (int i = 1; i <= number; i++) {
+        sum = sum + i; // sum += i;
     }
 
+    cout <<"Suma skaiciu nuo 1 iki "<<number<<" yra: "<<sum<<endl;
+
     return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
