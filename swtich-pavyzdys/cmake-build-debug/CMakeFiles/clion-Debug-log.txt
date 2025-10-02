@@ -1,1 +1,0 @@
-CMakeLists.txt not found in C:\Users\j.zailskas\Desktop\Strukturinis2025\swtich-pavyzdys Select CMakeLists.txt
