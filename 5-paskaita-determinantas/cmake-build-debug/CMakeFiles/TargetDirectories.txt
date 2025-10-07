@@ -1,0 +1,3 @@
+C:/Users/j.zailskas/Desktop/Strukturinis2025/5-paskaita-determinantas/cmake-build-debug/CMakeFiles/5_paskaita_determinantas.dir
+C:/Users/j.zailskas/Desktop/Strukturinis2025/5-paskaita-determinantas/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/j.zailskas/Desktop/Strukturinis2025/5-paskaita-determinantas/cmake-build-debug/CMakeFiles/rebuild_cache.dir
