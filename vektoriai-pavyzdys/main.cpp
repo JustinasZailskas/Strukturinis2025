@@ -30,38 +30,87 @@ struct playerType{
     averagesType averages;
 };
 
-int main() {
-    playerType players[10];
-    ifstream  infile;
-    int counter;
+void computeAverages(playerType &p) {
+    if (p.gamesPlayed > 0) {
+        p.averages.avgPointsPerGame = (double)p.statistic.pointsScored/p.gamesPlayed;
+        p.averages.avgAsPerGame = (double)p.statistic.assists/p.gamesPlayed;
+        p.averages.avgStPerGame = (double)p.statistic.steals/p.gamesPlayed;
+        p.averages.avgToPerGame = (double)p.statistic.turnovers/p.gamesPlayed;
+    } else {
+        p.averages.avgPointsPerGame = 0;
+        p.averages.avgAsPerGame = 0;
+        p.averages.avgStPerGame = 0;
+        p.averages.avgToPerGame = 0;
+    }
+}
 
-    infile.open("players_data.txt");
+int main() {
+    // playerType players[10];
+    ifstream  infile;
+
+    infile.open("players_data2.txt");
     if(!infile){
         cout<<"Cannot open the input file";
         return 1;
     }
 
-    for(counter = 0; counter < 5; counter++){
-        infile  >> players[counter].name.firstname
-                >> players[counter].name.lastname
-                >> players[counter].position
-                >> players[counter].height
-                >> players[counter].gamesPlayed
-                >> players[counter].statistic.pointsScored
-                >> players[counter].statistic.assists
-                >> players[counter].statistic.steals
-                >> players[counter].statistic.turnovers;
-        players[counter].averages.avgPointsPerGame = (double)players[counter].statistic.pointsScored/players[counter].gamesPlayed;
-        players[counter].averages.avgAsPerGame = (double)players[counter].statistic.assists/players[counter].gamesPlayed;
-        players[counter].averages.avgStPerGame = (double)players[counter].statistic.steals/players[counter].gamesPlayed;
+    int capacity = 5;
+    int count = 0;
+
+    playerType *players = new playerType[capacity];
 
 
+    while (true) {
+        playerType temp;
+        if(!(infile  >> temp.name.firstname
+                >> temp.name.lastname
+                >> temp.position
+                >> temp.height
+                >> temp.gamesPlayed
+                >> temp.statistic.pointsScored
+                >> temp.statistic.assists
+                >> temp.statistic.steals
+                >> temp.statistic.turnovers)) {
+            break;
+        }
+
+        computeAverages(temp);
+        if(count == capacity) {
+            int newCapacity = capacity * 2;
+            playerType *bigger = new playerType[newCapacity];
+
+            for(int i = 0; i < count; i++) {
+                bigger[i] = players[i];
+            }
+
+            delete[] players;
+            players = bigger;
+            capacity = newCapacity;
+        }
+        players[count] = temp;
+        count++;
     }
 
     infile.close();
 
-    for(counter = 0; counter < 5; counter++){
-        cout<<players[counter].name.lastname<<" "<<fixed<<setprecision(1)<<players[counter].averages.avgPointsPerGame<<endl;
+    cout << left
+        << setw(18) <<"Pavarde"
+        << right
+        << setw(8) <<"PPG"
+        << setw(8) <<"APG"
+        << setw(8) <<"SPG"
+        <<endl;
+    for(int i = 0; i < count; i++){
+        cout<< left
+            << setw(18) << players[i].name.lastname
+            <<right <<fixed <<setprecision(1)
+            <<setw(8)<<players[i].averages.avgPointsPerGame
+            <<setw(8)<<players[i].averages.avgAsPerGame
+            <<setw(8)<<players[i].averages.avgStPerGame
+            <<endl;
     }
+
+    delete[] players;
+    players = NULL;
     return 0;
 }
