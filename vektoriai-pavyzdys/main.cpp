@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iomanip>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -54,15 +55,10 @@ int main() {
         return 1;
     }
 
-    int capacity = 5;
-    int count = 0;
+    vector<playerType> players;
 
-    playerType *players = new playerType[capacity];
-
-
-    while (true) {
-        playerType temp;
-        if(!(infile  >> temp.name.firstname
+    playerType temp;
+    while (infile  >> temp.name.firstname
                 >> temp.name.lastname
                 >> temp.position
                 >> temp.height
@@ -70,28 +66,29 @@ int main() {
                 >> temp.statistic.pointsScored
                 >> temp.statistic.assists
                 >> temp.statistic.steals
-                >> temp.statistic.turnovers)) {
-            break;
-        }
-
+                >> temp.statistic.turnovers) {
         computeAverages(temp);
-        if(count == capacity) {
-            int newCapacity = capacity * 2;
-            playerType *bigger = new playerType[newCapacity];
-
-            for(int i = 0; i < count; i++) {
-                bigger[i] = players[i];
-            }
-
-            delete[] players;
-            players = bigger;
-            capacity = newCapacity;
-        }
-        players[count] = temp;
-        count++;
+        players.push_back(temp); //prideda elementa i vektoriaus pabaiga
     }
 
+
     infile.close();
+
+    for (int i = 0; i < players.size() - 1; i++) {
+        int maxIndex = i;
+
+        for(int j = i + 1; j < players.size(); j++ ) {
+            if (players[j].averages.avgPointsPerGame > players[maxIndex].averages.avgPointsPerGame) {
+                maxIndex = j;
+            }
+        }
+        if (maxIndex != i) {
+            playerType temp = players[i];
+            players[i] = players[maxIndex];
+            players[maxIndex] = temp;
+        }
+
+    }
 
     cout << left
         << setw(18) <<"Pavarde"
@@ -100,7 +97,7 @@ int main() {
         << setw(8) <<"APG"
         << setw(8) <<"SPG"
         <<endl;
-    for(int i = 0; i < count; i++){
+    for(int i = 0; i < players.size(); i++){
         cout<< left
             << setw(18) << players[i].name.lastname
             <<right <<fixed <<setprecision(1)
@@ -109,8 +106,5 @@ int main() {
             <<setw(8)<<players[i].averages.avgStPerGame
             <<endl;
     }
-
-    delete[] players;
-    players = NULL;
     return 0;
 }
