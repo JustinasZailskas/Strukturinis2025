@@ -1,4 +1,6 @@
 #include <iostream>
+#include <format>
+#include <string>
 using namespace std;
 
 int main() {
@@ -56,6 +58,20 @@ int main() {
     // }
     //
     // cout <<c<<endl;
+    //------Getline ir format pavyzdys
+    // string vardas;
 
+    // cout << "Iveskite varda ir pavarde: ";
+    // getline(cin, vardas);
+    //
+    // cout << format("Sveiki, {}!\n", vardas);
+
+    // string miestas;
+    //
+    // cout << "Iveskite miesto pavadinima: ";
+    // getline(cin, miestas);
+    //
+    // cout << format("|{:^20}|\n", miestas);
     return 0;
+
 }
