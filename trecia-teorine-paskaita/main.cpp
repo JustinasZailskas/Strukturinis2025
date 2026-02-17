@@ -72,16 +72,32 @@ int main() {
     //
     // }
 
-    int number;
-    cout <<"Iveskite sveikaji skaiciu Number"<<endl;
-    cin >> number;
-    int sum = 0;
+    // int number;
+    // cout <<"Iveskite sveikaji skaiciu Number"<<endl;
+    // cin >> number;
+    // int sum = 0;
+    //
+    // for (int i = 1; i <= number; i++) {
+    //     sum = sum + i; // sum += i;
+    // }
+    //
+    // cout <<"Suma skaiciu nuo 1 iki "<<number<<" yra: "<<sum<<endl;
+    // int i = 1;
+    //
+    // do {
+    //     cout << i << endl;
+    //     i++;
+    // } while (i <= 5);
 
-    for (int i = 1; i <= number; i++) {
-        sum = sum + i; // sum += i;
-    }
+    //int x = 10;
 
-    cout <<"Suma skaiciu nuo 1 iki "<<number<<" yra: "<<sum<<endl;
-
+    // while ir do-while skirtumas
+    // while (x < 5) {
+    //     cout << "While ciklas" << endl;
+    // }
+    //
+    // do {
+    //     cout << "Do-while ciklas" << endl;
+    // } while (x < 5);
     return 0;
 }
